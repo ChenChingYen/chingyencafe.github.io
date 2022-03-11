@@ -4,16 +4,30 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="web-icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/e4995ec024.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        <div class="message-wrapper">
+            <div class="message">
+                <div class="close-message-btn"><i class="fa-solid fa-circle-xmark"></i></div>
+                <div class="message-center">
+                    <div class="message-gif">
+                        <img src="giyuu.gif" alt="giyuu">
+                    </div>
+                    <div class="message-text">
+                        Welcome to my website. There is nothing here.
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- navigation bar -->
         <nav class="nav-bar">
             <div class="nav-center">
                 <div class="logo">
                     <img src="logo.png" alt="logo">
                 </div>
+                <!-- <div class="burger-icon">=</div> -->
                 <div class="nav-links">
                     <ul class="links">
                         <li><a href="#home">ホーム</a></li>
@@ -25,16 +39,51 @@
                 <div class="menu">
                     <a href="#refresh"class="refresh-btn">晴らす</a>
                 </div>
-                <div class="burger-icon">=</div>
             </div>
         </nav>
-        <!-- content -->
-        <div class="content-center">
-            <ul class="text">
-                <li>Hello world</li>
-                <li>ハロー・ワールド</li>
-                <li>你好 世界</li>
-            </ul>
+        <div class="mobile-links">
+            <div class="links-style">
+                <ul class="mob-links-items">
+                    <li><a href="#home">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <div>ホーム</div>
+                    </a></li>
+                    <li><a href="#analysis">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <div>分析</div>
+                    </a></li>
+                    <li><a href="#history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <div>歴史</div>
+                    </a></li>
+                    <li><a href="#list">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <div>リスト</div>
+                    </a></li>
+                </ul>
+            </div>
         </div>
+        <!-- content -->
+        <div class="content-wrapper">
+            <div class="content-center">
+                <div class="content">
+                    <div class="handsome icon">
+                        <img src="handsome.jpg" alt="chen">
+                    </div>
+                    <ul class="text">
+                        <li>Hello world</li>
+                        <li>ハロー・ワールド</li>
+                        <li>你好 世界</li>
+                    </ul>
+                    <ul class="contact">
+                        <li id="facebook"><a href="https://www.facebook.com/alvin.chen.50364/"><i class="fa-brands fa-facebook-square"></i></a></li>
+                        <li id="instagram"><a href="https://www.instagram.com/baizhu2002/"><i class="fa-brands fa-instagram-square"></i></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/chenchingyen/"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li id="github"><a href="https://github.com/ChenChingYen"><i class="fa-brands fa-github-square"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
     </body>
 </html>
