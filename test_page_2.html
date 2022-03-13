@@ -73,7 +73,7 @@
                 function onScanSuccess(qrCodeMessage) {
                     const info = document.querySelector(".info-wrapper");
                     info.classList.remove("close-info");
-                    document.getElementById('result').innerHTML = '<a href='+qrCodeMessage+' class="url"><span class="result">'+qrCodeMessage+'</span></a>';
+                    document.getElementById('result').innerHTML = '<a href='+qrCodeMessage+' class="url" target="_blank"><span class="result">'+qrCodeMessage+'</span></a>';
                     qrwrapper.classList.add("close-info");
                 }
                 function onScanError(errorMessage) {
