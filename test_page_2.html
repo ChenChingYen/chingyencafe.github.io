@@ -8,15 +8,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <div class="message-wrapper">
-            <div class="message">
-                <div class="close-message-btn"><i class="fa-solid fa-circle-xmark"></i></div>
-                <div class="message-center">
-                    <div class="message-gif">
-                        <img src="giyuu.gif" alt="giyuu">
-                    </div>
-                    <div class="message-text">
-                        QR Scanner testing.
+        <div class="info-wrapper close-info">
+            <div class="info">
+                <div class="close-info-btn"><i class="fa-solid fa-circle-xmark"></i></div>
+                <div class="info-center">
+                    <div class="result">
+                        <div id="result"></div>
                     </div>
                 </div>
             </div>
@@ -70,13 +67,12 @@
                 <div class="scanner">
                     <div style="width:auto;" id="reader"></div>
                 </div>
-                <div class="result">
-                    <div id="result"></div>
-                </div>
             </div>
             <script type="text/javascript">
                 function onScanSuccess(qrCodeMessage) {
-                    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+                    const info = document.querySelector(".info-wrapper");
+                    info.classList.remove("close-info");
+                    document.getElementById('result').innerHTML = '<a href="#qrcode_url" class="url"><span class="result">'+qrCodeMessage+'</span></a>';
                 }
                 function onScanError(errorMessage) {
                     //handle scan error
@@ -86,6 +82,6 @@
                 html5QrcodeScanner.render(onScanSuccess, onScanError);
             </script>
         </div>
-        <script src="app.js"></script>
+        <script src="test_page_js.js"></script>
     </body>
 </html>
