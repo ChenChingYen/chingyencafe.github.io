@@ -70,11 +70,14 @@
             </div>
             <script type="text/javascript">
                 const qrwrapper = document.querySelector(".qr-wrapper");
+                var num = 0;
                 function onScanSuccess(qrCodeMessage) {
                     const info = document.querySelector(".info-wrapper");
                     info.classList.remove("close-info");
                     document.getElementById('result').innerHTML = '<a href='+qrCodeMessage+' class="url" target="_blank"><span class="result">'+qrCodeMessage+'</span></a>';
                     qrwrapper.classList.add("close-info");
+                    console.log(num);
+                    num ++;
                 }
                 function onScanError(errorMessage) {
                     //handle scan error
