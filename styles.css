@@ -280,3 +280,15 @@ ul li{
 .close-message-btn:hover{
     color: black;
 }
+/* qr scanner */
+.result{
+    background-color: white;
+    color:black;
+    padding:20px;
+}
+.qr-wrapper{
+    padding: 20px;
+}
+.scanner{
+    margin-bottom: 20px;
+}

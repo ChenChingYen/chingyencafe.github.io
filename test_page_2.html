@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>庆延ブック</title>
+        <title>QR Scanner</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="web-icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
                         <img src="giyuu.gif" alt="giyuu">
                     </div>
                     <div class="message-text">
-                        Welcome to my website. There is nothing here.
+                        QR Scanner testing.
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
                 <div class="menu">
-                    <a href="test_page_2.html"class="refresh-btn">晴らす</a>
+                    <a href="index.html"class="refresh-btn">晴らす</a>
                 </div>
             </div>
         </nav>
@@ -65,24 +65,26 @@
         </div>
         <!-- content -->
         <div class="content-wrapper">
-            <div class="content-center">
-                <div class="content">
-                    <div class="handsome icon">
-                        <img src="handsome.jpg" alt="chen">
-                    </div>
-                    <ul class="text">
-                        <li>Hello world</li>
-                        <li>ハロー・ワールド</li>
-                        <li>你好 世界</li>
-                    </ul>
-                    <ul class="contact">
-                        <li id="facebook"><a href="https://www.facebook.com/alvin.chen.50364/"><i class="fa-brands fa-facebook-square"></i></a></li>
-                        <li id="instagram"><a href="https://www.instagram.com/baizhu2002/"><i class="fa-brands fa-instagram-square"></i></a></li>
-                        <li id="linkedin"><a href="https://www.linkedin.com/in/chenchingyen/"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li id="github"><a href="https://github.com/ChenChingYen"><i class="fa-brands fa-github-square"></i></a></li>
-                    </ul>
+            <script src="html5-qrcode.min.js"></script>
+            <div class="qr-wrapper">
+                <div class="scanner">
+                    <div style="width:auto;" id="reader"></div>
+                </div>
+                <div class="result">
+                    <div id="result"></div>
                 </div>
             </div>
+            <script type="text/javascript">
+                function onScanSuccess(qrCodeMessage) {
+                    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+                }
+                function onScanError(errorMessage) {
+                    //handle scan error
+                    document.getElementById('result').innerHTML = '<span class="result">'+errorMessage+'</span>';
+                }
+                var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+                html5QrcodeScanner.render(onScanSuccess, onScanError);
+            </script>
         </div>
         <script src="app.js"></script>
     </body>
