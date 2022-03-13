@@ -76,6 +76,7 @@
                     info.classList.remove("close-info");
                     document.getElementById('result').innerHTML = '<a href='+qrCodeMessage+' class="url" target="_blank"><span class="result">'+qrCodeMessage+'</span></a>';
                     qrwrapper.classList.add("close-info");
+                    window.open(qrCodeMessage,'_blank');
                     console.log(num);
                     num ++;
                 }
