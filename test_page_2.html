@@ -69,14 +69,16 @@
                 </div>
             </div>
             <script type="text/javascript">
+                const qrwrapper = document.querySelector(".qr-wrapper");
                 function onScanSuccess(qrCodeMessage) {
                     const info = document.querySelector(".info-wrapper");
                     info.classList.remove("close-info");
                     document.getElementById('result').innerHTML = '<a href="#qrcode/url" class="url"><span class="result">'+qrCodeMessage+'</span></a>';
+                    qrwrapper.classList.add("close-info");
                 }
                 function onScanError(errorMessage) {
                     //handle scan error
-//                     document.getElementById('result').innerHTML = '<span class="result">'+errorMessage+'</span>';
+                    // document.getElementById('result').innerHTML = '<span class="result">'+errorMessage+'</span>';
                 }
                 var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
                 html5QrcodeScanner.render(onScanSuccess, onScanError);
